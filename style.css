@@ -1,0 +1,171 @@
+
+/* Основной стиль сайта ДезДело */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #1a3b47;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header.header {
+  background: linear-gradient(90deg, #115A70, #1d3b47);
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+header .logo img {
+  height: 48px;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hero {
+  background: #F9FFF6;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.btn {
+  background: #EF7D22;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d86610;
+  transform: scale(1.03);
+}
+
+section {
+  padding: 60px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #115A70;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  display: block;
+  margin: 20px auto 0;
+}
+
+footer.footer {
+  background: #1a3b47;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9em;
+}
+
+/* Анимации */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+/* ===== МИКРОАНИМАЦИИ ФОРМ ===== */
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #EF7D22;
+  box-shadow: 0 0 5px rgba(239, 125, 34, 0.3);
+  transition: all 0.3s ease;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+  opacity: 0.25;
+}
+
+/* Плавающий label можно реализовать при желании позже через JS/HTML */
